@@ -38,6 +38,12 @@ class _MyAppState extends State<MyApp> {
           bodyLarge: TextStyle(fontSize: 25,color: Colors.green),
           bodyMedium: TextStyle(fontSize: 18,color: Colors.green),
           bodySmall: TextStyle(fontSize: 12,color: Colors.green),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.orange,
+            minimumSize: Size(200, 50)
+          )
         )
       ),
       theme: ThemeData(
@@ -49,6 +55,12 @@ class _MyAppState extends State<MyApp> {
             bodyLarge: TextStyle(fontSize: 25,color: Colors.blue),
             bodyMedium: TextStyle(fontSize: 18,color: Colors.blue),
             bodySmall: TextStyle(fontSize: 12,color: Colors.blue),
+          ),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orange,
+                  minimumSize: Size(200, 50)
+              )
           )
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -77,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
   return Scaffold(
       appBar: AppBar(
-       backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+       //backgroundColor: Theme.of(context).colorScheme.inversePrimary,
        title: Text("Home",style: Theme.of(context).textTheme.bodyLarge,),
         actions: [
           PopupMenuButton(
@@ -115,6 +127,9 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.bodyLarge,
             ),
+            ElevatedButton(onPressed: () {}, child: Text("Login"),style: Theme.of(context).elevatedButtonTheme.style,),
+            SizedBox(height: 11,),
+            ElevatedButton(onPressed: () {}, child: Text("Sign up"),style: Theme.of(context).elevatedButtonTheme.style!.copyWith(foregroundColor: WidgetStatePropertyAll(Colors.white)),)
           ],
         ),
       ),
