@@ -14,7 +14,7 @@ class _ThemeSettingPageState extends State<ThemeSettingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Theme Page"),
+        title: Text("Theme Page",style: Theme.of(context).textTheme.bodyLarge,),
       ),
       body: Center(
         child: SwitchListTile.adaptive(
